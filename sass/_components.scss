@@ -9,9 +9,10 @@
 .logo {
 	height: 4rem;
 	margin-left: 3rem;
+	color: var(--color-primary);
 
 	&-text {
-		color: rgb(20, 20, 20);
+		color: var(--color-black);
 	}
 }
 
@@ -120,4 +121,37 @@
 
 	&__user-name {
 	}
+}
+
+//////////////////////////////////////////
+////SIDE NAV
+
+.side-nav {
+	font-size: 1.4rem;
+	list-style: none;
+	margin-top: 3.5rem;
+
+	&__item {
+	}
+
+	&__link:link,
+	&__link:visited {
+		color: var(--color-black);
+		text-decoration: none;
+	}
+
+	&__icon {
+		width: 1.75rem;
+		height: 1.75rem;
+	}
+}
+
+//////////////////////////////////////////
+///LEGAL TEXT
+
+.legal {
+	font-size: 1.2rem;
+	text-align: center;
+	padding: 2.5rem;
+	color: var(--color-grey-light-4);
 }
