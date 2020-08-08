@@ -5,9 +5,10 @@
 	justify-content: space-between;
 	align-items: center;
 	width: 15rem;
+	cursor: pointer;
 }
 .logo {
-	height: 4rem;
+	height: 3rem;
 	margin-left: 3rem;
 	color: var(--color-primary);
 
@@ -38,6 +39,7 @@
 		&:focus {
 			outline: none;
 			width: 100%;
+			border-bottom: 1px solid var(--color-primary);
 		}
 
 		&::-webkit-input-placeholder {
@@ -85,6 +87,10 @@
 		background-color: var(--color-grey-light-2);
 	}
 
+	& > *:last-child {
+		border-top-right-radius: 20px;
+	}
+
 	&__icon-box {
 		position: relative;
 	}
@@ -120,29 +126,80 @@
 	}
 
 	&__user-name {
+		margin-left: 1rem;
 	}
 }
 
 //////////////////////////////////////////
 ////SIDE NAV
+#side-nav__link--active {
+	color: #fff;
+}
 
 .side-nav {
-	font-size: 1.4rem;
+	font-size: 2rem;
 	list-style: none;
 	margin-top: 3.5rem;
 
 	&__item {
+		padding: 2.5rem 3.5rem;
+		position: relative;
+		transition: color 0s 0.3s;
+
+		&:not(:last-child) {
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	&__item::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 3px;
+		box-shadow: var(--shadow-dark-short);
+		border-top-right-radius: 15px;
+		border-bottom-right-radius: 15px;
+		background-color: var(--color-primary-dark);
+		transform: scaleY(0);
+		transform-origin: bottom;
+		transition: transform 0.2s, width 0.4s cubic-bezier(0.88, -0.02, 0.05, 1) 0.2s, background-color 0.1s;
+	}
+
+	&__item:hover::before,
+	&__item--active::before {
+		transform: scaleY(1);
+		width: 100%;
+	}
+
+	&__item:hover &__link {
+		color: #fff;
+		transition: color 0s 0.4s;
+	}
+
+	&__item:active::before {
+		background-color: var(--color-primary);
 	}
 
 	&__link:link,
 	&__link:visited {
-		color: var(--color-black);
+		color: var(--color-primary-dark);
 		text-decoration: none;
+		font-size: 1.4rem;
+		display: block;
+		display: flex;
+		align-items: center;
+		text-transform: uppercase;
+		position: relative;
+		z-index: 10;
 	}
 
 	&__icon {
-		width: 1.75rem;
-		height: 1.75rem;
+		width: 2.5rem;
+		height: 2.5rem;
+		margin-right: 2rem;
+		fill: currentColor;
 	}
 }
 

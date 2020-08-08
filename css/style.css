@@ -90,10 +90,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 15rem; }
+  width: 15rem;
+  cursor: pointer; }
 
 .logo {
-  height: 4rem;
+  height: 3rem;
   margin-left: 3rem;
   color: var(--color-primary); }
   .logo-text {
@@ -116,7 +117,8 @@ body {
     margin-right: -3.5rem; }
     .search__input:focus {
       outline: none;
-      width: 100%; }
+      width: 100%;
+      border-bottom: 1px solid var(--color-primary); }
     .search__input::-webkit-input-placeholder {
       font-weight: 100;
       color: var(--color-grey-light-4); }
@@ -144,6 +146,8 @@ body {
     align-items: center; }
   .user-nav > *:hover {
     background-color: var(--color-grey-light-2); }
+  .user-nav > *:last-child {
+    border-top-right-radius: 20px; }
   .user-nav__icon-box {
     position: relative; }
   .user-nav__icon {
@@ -166,17 +170,59 @@ body {
   .user-nav__user-photo {
     height: 3.75rem;
     border-radius: 50%; }
+  .user-nav__user-name {
+    margin-left: 1rem; }
+
+#side-nav__link--active {
+  color: #fff; }
 
 .side-nav {
-  font-size: 1.4rem;
+  font-size: 2rem;
   list-style: none;
   margin-top: 3.5rem; }
+  .side-nav__item {
+    padding: 2.5rem 3.5rem;
+    position: relative;
+    transition: color 0s 0.3s; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: 0.5rem; }
+  .side-nav__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    box-shadow: var(--shadow-dark-short);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: var(--color-primary-dark);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.2s, width 0.4s cubic-bezier(0.88, -0.02, 0.05, 1) 0.2s, background-color 0.1s; }
+  .side-nav__item:hover::before, .side-nav__item--active::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:hover .side-nav__link {
+    color: #fff;
+    transition: color 0s 0.4s; }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary); }
   .side-nav__link:link, .side-nav__link:visited {
-    color: var(--color-black);
-    text-decoration: none; }
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    font-size: 1.4rem;
+    display: block;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10; }
   .side-nav__icon {
-    width: 1.75rem;
-    height: 1.75rem; }
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 2rem;
+    fill: currentColor; }
 
 .legal {
   font-size: 1.2rem;
