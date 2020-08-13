@@ -14,6 +14,7 @@
 
 	&-text {
 		color: var(--color-black);
+		margin-top: 1rem;
 	}
 }
 
@@ -96,7 +97,7 @@
 	}
 
 	&__icon {
-		height: 2.25rem;
+		// height: 2.25rem;
 		width: 2.25rem;
 		fill: var(--color-grey-dark-2);
 	}
@@ -164,7 +165,7 @@
 		background-color: var(--color-primary-dark);
 		transform: scaleY(0);
 		transform-origin: bottom;
-		transition: transform 0.2s, width 0.4s cubic-bezier(0.88, -0.02, 0.05, 1) 0.2s, background-color 0.1s;
+		transition: transform 0.2s, width 0.3s cubic-bezier(0.88, -0.02, 0.05, 1) 0.2s, background-color 0.1s;
 	}
 
 	&__item:hover::before,
@@ -211,4 +212,106 @@
 	text-align: center;
 	padding: 2.5rem;
 	color: var(--color-grey-light-4);
+}
+
+.house-view {
+	padding-right: 4rem;
+}
+
+//////////////////////////////////////////
+///GALLERY
+
+.gallery {
+	border-radius: 15px;
+	margin: 3.5rem 2rem 2rem 2rem;
+	height: 20rem;
+
+	&__item {
+		height: 20rem;
+	}
+
+	&__photo {
+		height: 100%;
+		border-radius: 15px;
+		box-shadow: var(--shadow-dark-short);
+	}
+}
+
+//////////////////////////////////////////
+////OVERVIEW
+
+.overview {
+	display: flex;
+	border-bottom: 1px solid var(--color-grey-light-4);
+	margin-left: 2rem;
+	padding: 1rem 0 1.5rem 0;
+
+	&__heading {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 2.1rem;
+		font-weight: 400;
+		letter-spacing: 1px;
+		margin-right: 1.5rem;
+	}
+
+	&__stars {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-right: auto;
+	}
+
+	&__icon-star,
+	&__icon-location {
+		width: 1.9rem;
+		height: 1.9rem;
+		fill: var(--color-primary);
+	}
+
+	&__location {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__btn-inline {
+		border: none;
+		color: var(--color-primary);
+		border-bottom: 1px solid currentColor;
+		background-color: transparent;
+		font-family: inherit;
+		display: inline-block;
+		font-size: 1.2rem;
+		margin: 0 3rem 0 1rem;
+		cursor: pointer;
+		padding-bottom: 2px;
+		transition: all 0.2s;
+
+		&:hover {
+			color: var(--color-grey-dark-1);
+		}
+	}
+
+	&__icon-heart {
+		width: 3rem;
+		height: 3rem;
+		fill: transparent;
+		stroke: var(--primary-pink);
+		cursor: pointer;
+		margin-right: 2rem;
+		transition: all 0.2s;
+
+		&:active {
+			fill: var(--primary-pink);
+		}
+
+		&:focus {
+			fill: var(--primary-pink);
+		}
+	}
+
+	&__like {
+	}
 }
