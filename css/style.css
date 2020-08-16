@@ -44,6 +44,9 @@ Grey dark 3: #999
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -53,6 +56,9 @@ body {
   background-image: linear-gradient(to right bottom, var(--color-primary), var(--color-primary-dark));
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh; }
 
 .btn-inline {
@@ -76,7 +82,13 @@ body {
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
   border-radius: 20px;
+  overflow: hidden;
   min-height: 50rem; }
+  @media only screen and (max-width: 87.5em) {
+    .container {
+      margin: 0;
+      max-width: 100%;
+      border-radius: 0; } }
 
 .header {
   height: 7.5rem;
@@ -89,9 +101,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+  @media only screen and (max-width: 87.5em) {
+    .header {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0; } }
+  @media only screen and (max-width: 32.5em) {
+    .header {
+      flex-wrap: wrap;
+      align-content: space-around;
+      height: 10rem;
+      padding: 0 2rem; } }
 
 .content {
   display: flex; }
+  @media only screen and (max-width: 57em) {
+    .content {
+      flex-direction: column; } }
 
 .sidebar {
   display: flex;
@@ -106,12 +131,23 @@ body {
 .detail {
   display: flex;
   font-size: 1.4rem;
-  padding: 4.5rem 2rem;
-  background-color: transparent; }
+  padding: 4.5rem 0 4.5rem 2rem;
+  background-color: transparent;
+  justify-content: space-between; }
+  @media only screen and (max-width: 43.75em) {
+    .detail {
+      flex-direction: column; } }
+  @media only screen and (max-width: 43.75em) {
+    .detail {
+      padding-left: 0; } }
 
 .description {
   flex: 0 0 60%;
   margin-right: 10rem; }
+  @media only screen and (max-width: 43.75em) {
+    .description {
+      margin-right: 0;
+      margin-bottom: 3rem; } }
 
 .user-reviews {
   display: flex;
@@ -125,6 +161,9 @@ body {
   align-items: center;
   width: 15rem;
   cursor: pointer; }
+  @media only screen and (max-width: 75em) {
+    .header__logo-box {
+      justify-content: space-around; } }
 
 .logo {
   height: 3rem;
@@ -133,12 +172,19 @@ body {
   .logo-text {
     color: var(--color-black);
     margin-top: 1rem; }
+  @media only screen and (max-width: 75em) {
+    .logo {
+      margin-left: 0; } }
 
 .search {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 0 0 40%; }
+  @media only screen and (max-width: 32.5em) {
+    .search {
+      order: 1;
+      flex: 0 0 100%; } }
   .search__input {
     font-family: inherit;
     font-size: inherit;
@@ -156,6 +202,9 @@ body {
     .search__input::-webkit-input-placeholder {
       font-weight: 100;
       color: var(--color-grey-light-4); }
+    @media only screen and (max-width: 75em) {
+      .search__input {
+        margin: 0 auto; } }
   .search__button {
     border: none;
     background-color: #fff; }
@@ -167,6 +216,9 @@ body {
     height: 2rem;
     width: 2rem;
     fill: var(--color-grey-dark-3); }
+    @media only screen and (max-width: 75em) {
+      .search__icon {
+        display: none; } }
 
 .user-nav {
   display: flex;
@@ -185,6 +237,7 @@ body {
   .user-nav__icon-box {
     position: relative; }
   .user-nav__icon {
+    height: 2.25rem;
     width: 2.25rem;
     fill: var(--color-grey-dark-2); }
   .user-nav__notification {
@@ -213,12 +266,25 @@ body {
   font-size: 2rem;
   list-style: none;
   margin-top: 3.5rem; }
+  @media only screen and (max-width: 57em) {
+    .side-nav {
+      display: flex;
+      margin: 0; } }
   .side-nav__item {
     padding: 2.5rem 3.5rem;
     position: relative;
     transition: color 0s 0.3s; }
     .side-nav__item:not(:last-child) {
       margin-bottom: 0.5rem; }
+      @media only screen and (max-width: 57em) {
+        .side-nav__item:not(:last-child) {
+          margin: 0; } }
+    @media only screen and (max-width: 57em) {
+      .side-nav__item {
+        flex: 1; } }
+    @media only screen and (max-width: 43.75em) {
+      .side-nav__item {
+        padding: 1rem; } }
   .side-nav__item::before {
     content: '';
     position: absolute;
@@ -233,6 +299,11 @@ body {
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 0.2s, width 0.3s cubic-bezier(0.88, -0.02, 0.05, 1) 0.2s, background-color 0.1s; }
+    @media only screen and (max-width: 57em) {
+      .side-nav__item::before {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow: none; } }
   .side-nav__item:hover::before, .side-nav__item--active::before {
     transform: scaleY(1);
     width: 100%; }
@@ -251,24 +322,41 @@ body {
     text-transform: uppercase;
     position: relative;
     z-index: 10; }
+    @media only screen and (max-width: 57em) {
+      .side-nav__link:link, .side-nav__link:visited {
+        justify-content: center; } }
+    @media only screen and (max-width: 43.75em) {
+      .side-nav__link:link, .side-nav__link:visited {
+        flex-direction: column; } }
   .side-nav__icon {
     width: 2.5rem;
     height: 2.5rem;
     margin-right: 2rem;
     fill: currentColor; }
+    @media only screen and (max-width: 43.75em) {
+      .side-nav__icon {
+        margin-right: 0;
+        width: 1.5rem;
+        height: 1.5rem; } }
 
 .legal {
   font-size: 1.2rem;
   text-align: center;
   padding: 2.5rem;
   color: var(--color-grey-light-4); }
+  @media only screen and (max-width: 57em) {
+    .legal {
+      display: none; } }
 
 .house-view {
   padding-right: 4rem; }
+  @media only screen and (max-width: 43.75em) {
+    .house-view {
+      padding: 3rem; } }
 
 .gallery {
   border-radius: 15px;
-  margin: 3.5rem 2rem 2rem 2rem;
+  margin: 3.5rem 0 2rem 2rem;
   height: 25rem;
   display: flex;
   justify-content: space-between; }
@@ -279,18 +367,30 @@ body {
     border-radius: 15px;
     box-shadow: var(--shadow-dark-short);
     margin-right: 5rem; }
+    @media only screen and (max-width: 31.25em) {
+      .gallery__photo {
+        width: 100%; } }
+  @media only screen and (max-width: 43.75em) {
+    .gallery {
+      margin-left: 0; } }
 
 #map {
   height: 100%;
   border-radius: 20px;
   box-shadow: var(--shadow-dark-short);
   flex: 1; }
+  @media only screen and (max-width: 43.75em) {
+    #map {
+      display: none; } }
 
 .overview {
   display: flex;
   border-bottom: 1px solid var(--color-grey-light-4);
   margin-left: 2rem;
   padding: 1rem 0 1.5rem 0; }
+  @media only screen and (max-width: 75em) {
+    .overview {
+      flex-wrap: wrap; } }
   .overview__heading {
     display: flex;
     justify-content: center;
@@ -304,6 +404,11 @@ body {
     justify-content: center;
     align-items: center;
     margin-right: auto; }
+    @media only screen and (max-width: 75em) {
+      .overview__stars {
+        order: 1;
+        width: 100%;
+        justify-content: flex-start; } }
   .overview__icon-star, .overview__icon-location {
     width: 1.9rem;
     height: 1.9rem;
@@ -338,6 +443,9 @@ body {
       fill: var(--primary-pink); }
     .overview__icon-heart:focus {
       fill: var(--primary-pink); }
+  @media only screen and (max-width: 43.75em) {
+    .overview {
+      margin-left: 0; } }
 
 .paragraph:not(:last-of-type) {
   margin-bottom: 2rem; }
@@ -359,9 +467,16 @@ body {
     height: 1.5rem;
     width: 1.5rem;
     margin-right: 0.7rem;
-    background-color: var(--color-primary);
-    -webkit-mask-image: url(../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover; }
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover; }
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      .list__item::before {
+        background-color: var(--color-primary);
+        mask-image: url(../img/chevron-thin-right.svg);
+        mask-size: cover;
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        background-image: none; } }
 
 .recommend {
   font-size: 1.3rem;
@@ -376,6 +491,12 @@ body {
     border: 2.5px solid var(--color-grey-light-1); }
     .recommend__photo:not(:last-child) {
       margin-right: -1.5rem; }
+  @media only screen and (max-width: 75em) {
+    .recommend__count {
+      margin-bottom: 1rem; } }
+  @media only screen and (max-width: 75em) {
+    .recommend {
+      flex-direction: column; } }
 
 .review {
   background-color: var(--color-grey-light-1);
@@ -383,9 +504,9 @@ body {
   padding: 3rem;
   margin-bottom: 3.5rem;
   border-radius: 20px;
-  width: 30rem;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  flex: 1; }
   .review__text {
     z-index: 10;
     position: relative; }
@@ -419,6 +540,9 @@ body {
     font-family: sans-serif;
     line-height: 1;
     z-index: 1; }
+  @media only screen and (max-width: 43.75em) {
+    .review {
+      width: 100%; } }
 
 .cta {
   padding: 3.5rem 0;

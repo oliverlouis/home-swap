@@ -37,6 +37,13 @@ Grey dark 3: #999
 	--shadow-dark-short: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
+$bp-largest: 87.5em; //1400px
+$bp-large: 75em; //1200px
+$bp-medium: 57em; //912px
+$bp-small: 43.75em; //700px
+$bp-smallest: 32.5em; //700px
+$bp-tiny: 31.25em; //500px
+
 * {
 	margin: 0;
 	padding: 0;
@@ -51,6 +58,10 @@ Grey dark 3: #999
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+
+	@media only screen and (max-width: $bp-large) {
+		font-size: 50%;
+	}
 }
 
 body {
@@ -61,7 +72,9 @@ body {
 	background-image: linear-gradient(to right bottom, var(--color-primary), var(--color-primary-dark));
 	background-size: cover;
 	background-repeat: no-repeat;
-
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	min-height: 100vh;
 }
 
