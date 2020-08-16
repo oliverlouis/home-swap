@@ -29,7 +29,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	// background-color: var(--color-grey-light-4);
+	background-color: var(--color-grey-light-6);
 	flex: 0 0 18%;
 }
 
@@ -39,21 +39,25 @@
 
 .detail {
 	display: flex;
+	font-size: 1.4rem;
 	padding: 4.5rem 2rem;
 	background-color: transparent;
 }
 
 .description {
-	padding: 3rem;
-	font-size: 1.4rem;
 	flex: 0 0 60%;
-	margin-right: 4.5rem;
-	border-radius: 20px;
-	box-shadow: var(--shadow-dark-short);
+	margin-right: 10rem;
+	// padding: 3rem;
+	// margin-right: 4.5rem;
+	// border-radius: 20px;
+	// box-shadow: var(--shadow-dark-short);
 }
 
 .user-reviews {
-	border-radius: 20px;
-	box-shadow: var(--shadow-dark-short);
+	// border-radius: 20px;
+	// box-shadow: var(--shadow-dark-short);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	flex: 1;
 }

@@ -97,6 +97,7 @@
                     <figure class="gallery__item">
                         <img src="img/home-min.jpg" alt="photo of home" class="gallery__photo">
                     </figure>
+                    <div id="map"></div>
                 </div>
 
                 <div class="overview">
@@ -123,7 +124,7 @@
                         <svg class="overview__icon-location">
                             <use xlink:href="img/sprite.svg#icon-location-pin"></use>
                         </svg>
-                        <button class="overview__btn-inline">La Garita, Gran Canaria</button>
+                        <button class="btn-inline">La Garita, Gran Canaria</button>
                     </div>
                     <div class="overview__like">
                         <svg class="overview__icon-heart" path stroke-width="1" d="M5 20 l215 0">
@@ -145,7 +146,7 @@
                             <li class="list__item">Pool accessible</li>
                             <li class="list__item">Wifi available</li>
                             <li class="list__item">Beautiful view of the ocean</li>
-                            <li class="list__item">Wash and Dryer available</li>
+                            <li class="list__item">Washer and dryer available</li>
                             <li class="list__item">Air conditioning and heating</li>
                             <li class="list__item">Pets allowed</li>
                             <li class="list__item">Car garage available</li>
@@ -165,13 +166,66 @@
                     </div>
 
                     <div class="user-reviews">
+                        <figure class="review">
+                            <blockquote class="review__text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex.
+                            </blockquote>
+                            <figcaption class="review__user">
+                                <img src="./img/oli.jpg" alt="user 1" class="review__photo">
+                                <div class="review__user-box">
+                                    <p class="review__user-name">Oliver</p>
+                                    <p class="review__user-date">11th Aug, 2020</p>
+                                </div>
+                                <div class="review__rating">9.5</div>
+                            </figcaption>
+                        </figure>
 
+                        <figure class="review">
+                            <blockquote class="review__text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi.
+                            </blockquote>
+                            <figcaption class="review__user">
+                                <img src="./img/user-2.jpg" alt="user 2" class="review__photo">
+                                <div class="review__user-box">
+                                    <p class="review__user-name">Arielle</p>
+                                    <p class="review__user-date">05th Jul, 2019</p>
+                                </div>
+                                <div class="review__rating">8.7</div>
+                            </figcaption>
+                        </figure>
+                        <button class="btn-inline">Show all <span>&rarr;</span></button>
                     </div>
 
+                </div>
+                <div class="cta">
+                    <h2 class="cta__book-now">Traveling to Gran Canaria in August?</h2>
+                    <button class="btn">
+                        <span class="btn__visible">10th Aug, 2020 - 26th Aug, 2020</span>
+                        <span class="btn__hidden">Swap Now</span>
+                    </button>
                 </div>
             </main>
         </div>
     </div>
+
+    <script>
+        function initMap() {
+            var options = {
+                zoom: 10,
+                center: {
+                    lat: 27.9202,
+                    lng: -15.5474
+                }
+            }
+
+            var map = new google.maps.Map(document.getElementById('map'), options)
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcjPXtQ49I4SxL5eeQ3n5kPG1S8afEQz4&callback=initMap" type="text/javascript"></script>
 </body>
 
 </html>
+
+<!-- API-KEY
+AIzaSyAcjPXtQ49I4SxL5eeQ3n5kPG1S8afEQz4 -->
